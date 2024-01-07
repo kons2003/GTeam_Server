@@ -15,7 +15,6 @@ public class TestController {
     private final AuthService authService;
 
     @GetMapping("/test")
-    @ApiOperation(value = "테스트", notes = "테스트 중입니다.")
     public User test(Principal principal) {
         return authService.test(principal);
     }
