@@ -20,3 +20,6 @@ jwt:
 client:
   id: ${GOOGLE_CLIENT_ID}
   secret: ${GOOGLE_CLIENT_SECRET}
+mvc:
+  pathmatch:
+    matching-strategy: ant_path_matcher
