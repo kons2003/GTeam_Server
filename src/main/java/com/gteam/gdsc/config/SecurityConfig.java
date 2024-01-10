@@ -32,7 +32,7 @@ public class SecurityConfig {
                 .formLogin(AbstractHttpConfigurer::disable)
                 .logout(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                        .requestMatchers("/api/oauth2/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                        .requestMatchers("/api/**", "/api/oauth2/**", "/login/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
                         .requestMatchers("/test").authenticated()
                         .anyRequest().authenticated()
                 )
