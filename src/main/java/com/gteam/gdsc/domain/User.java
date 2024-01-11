@@ -28,7 +28,7 @@ public class User {
     @Column(name = "USER_PICTURE_URL", nullable = false)
     private String pictureUrl;
 
-    @Column(name = "USER_TOKEN", nullable = false)
+    @Column(name = "USER_TOKEN", columnDefinition = "TEXT")
     private String token;
 
     @Enumerated(EnumType.STRING)
