@@ -28,6 +28,9 @@ public class User {
     @Column(name = "USER_PICTURE_URL", nullable = false)
     private String pictureUrl;
 
+    @Column(name = "USER_TOKEN", nullable = false)
+    private String token;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "USER_ROLE", nullable = false)
     private Role role;
