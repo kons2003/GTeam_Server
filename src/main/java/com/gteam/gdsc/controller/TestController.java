@@ -17,10 +17,17 @@ import java.security.Principal;
 public class TestController {
     private final AuthService authService;
 
+    @GetMapping("/api/hello")
+    public String test() {
+        return "hello";
+    }
+
     @Operation(summary = "구글 로그인", description = "test 메소드 실행")
     @Parameter(name = "principal", description = "test")
     @GetMapping("/test")
     public User test(Principal principal) {
         return authService.test(principal);
     }
+
+
 }
