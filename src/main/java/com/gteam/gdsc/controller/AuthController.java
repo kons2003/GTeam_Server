@@ -3,10 +3,7 @@ package com.gteam.gdsc.controller;
 import com.gteam.gdsc.dto.Token;
 import com.gteam.gdsc.service.AuthService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api/oauth2")
 @RestController
@@ -15,11 +12,27 @@ public class AuthController {
 
     private final AuthService authService;
 
+    @PostMapping("/login")
+    public Token PostGoogleCallback( String credential) {
+        return loginOrSignup(credential);
+    }
+
+    @PostMapping("/login2")
+    public Token googleCallbacklogin(String credential) {
+        String googleAccessToken = authService.getGoogleAccessToken(credential);
+        return loginOrSignup(googleAccessToken);
+    }
+
     @GetMapping("callback/google")
+    public Token googleCallback(@RequestBody String credential) {
+        return loginOrSignup(credential);
+    }
+
+    /*@GetMapping("callback/google")
     public Token googleCallback(@RequestParam(name = "code") String code) {
         String googleAccessToken = authService.getGoogleAccessToken(code);
         return loginOrSignup(googleAccessToken);
-    }
+    }*/
 
     public Token loginOrSignup(String googleAccessToken) {
         return authService.loginOrSignUp(googleAccessToken);
