@@ -1,3 +1,4 @@
+/*
 package com.gteam.gdsc.controller;
 
 import com.gteam.gdsc.domain.User;
@@ -35,11 +36,12 @@ public class UserController {
 
     // UPDATE
     @Operation(description = "회원 정보 수정")
-    @PutMapping("/{id}/update")
-    public ResponseEntity<User> updateUser(@Parameter @PathVariable("id") String id) {
+    @PutMapping("/update/{id}")
+    public ResponseEntity<User> updateUser(@Parameter @PathVariable("id") @RequestBody String id) {
         return ResponseEntity.ok(userService.findByUserId);
     }
 
     // DELETE
 
 }
+*/

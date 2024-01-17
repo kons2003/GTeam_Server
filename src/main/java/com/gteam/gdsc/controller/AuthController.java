@@ -1,3 +1,4 @@
+/*
 package com.gteam.gdsc.controller;
 
 import com.gteam.gdsc.dto.Token;
@@ -23,18 +24,19 @@ public class AuthController {
         return loginOrSignup(googleAccessToken);
     }
 
-    @GetMapping("callback/google")
-    public Token googleCallback(@RequestBody String credential) {
+    @GetMapping("callback/google2")
+    public Token googleCallback2(@RequestBody String credential) {
         return loginOrSignup(credential);
     }
 
-    /*@GetMapping("callback/google")
+    @GetMapping("callback/google")
     public Token googleCallback(@RequestParam(name = "code") String code) {
         String googleAccessToken = authService.getGoogleAccessToken(code);
         return loginOrSignup(googleAccessToken);
-    }*/
+    }
 
     public Token loginOrSignup(String googleAccessToken) {
         return authService.loginOrSignUp(googleAccessToken);
     }
 }
+*/
