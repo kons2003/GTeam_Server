@@ -1,13 +1,15 @@
 package com.gteam.gdsc.infra.oauth.google;
 
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 
+@Getter
 public class GoogleOauthConfig {
 
-    private String googleRedirctUri;
-    private String googleClientId;
-    private String googleClientSecret;
-    private String googleScope;
+    private final String googleRedirctUri;
+    private final String googleClientId;
+    private final String googleClientSecret;
+    private final String googleScope;
 
     public GoogleOauthConfig(
             @Value("${GOOGLE_REDIRECT_URI}")
