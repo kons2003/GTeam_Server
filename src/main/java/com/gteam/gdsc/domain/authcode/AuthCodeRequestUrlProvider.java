@@ -1,4 +1,4 @@
-package com.gteam.gdsc.domain.oauthcode;
+package com.gteam.gdsc.domain.authcode;
 
 import com.gteam.gdsc.domain.OauthServerType;
 
