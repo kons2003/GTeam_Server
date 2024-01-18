@@ -2,14 +2,16 @@ package com.gteam.gdsc.infra.oauth.google.authcode;
 
 import com.gteam.gdsc.domain.OauthServerType;
 import com.gteam.gdsc.domain.authcode.AuthCodeRequestUrlProvider;
+import com.gteam.gdsc.infra.oauth.google.GoogleOauthConfig;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Component
 @RequiredArgsConstructor
 public class GoogleAuthCodeRequestUrlProvider implements AuthCodeRequestUrlProvider {
 
-    private final GoogleOauthConfig googleOauthConfig;
+    private GoogleOauthConfig googleOauthConfig;
 
     @Override
     public OauthServerType supportServer() {
