@@ -1,4 +1,3 @@
-/*
 package com.gteam.gdsc.controller;
 
 import com.gteam.gdsc.dto.Token;
@@ -39,4 +38,3 @@ public class AuthController {
         return authService.loginOrSignUp(googleAccessToken);
     }
 }
-*/
