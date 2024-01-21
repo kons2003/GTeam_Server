@@ -1,7 +1,7 @@
 package com.gteam.gdsc.jwt;
 
-import com.gteam.gdsc.domain.User;
-import com.gteam.gdsc.dto.Token;
+import com.gteam.gdsc.auth.domain.GoogleUser;
+import com.gteam.gdsc.auth.dto.Token;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -32,14 +32,14 @@ public class TokenProvider {
         this.accessTokenValidityTime = accessTokenValidityTime;
     }
 
-    public Token createToken(User user) {
+    public Token createToken(GoogleUser googleUser) {
         long nowTime = (new Date()).getTime();
 
         Date tokenExpiredTime = new Date(nowTime + accessTokenValidityTime);
 
         String accessToken = Jwts.builder()
-                .setSubject(user.getId().toString())
-                .claim("auth", user.getRole().name())
+                .setSubject(googleUser.getId().toString())
+                .claim("auth", googleUser.getRole().name())
                 .setExpiration(tokenExpiredTime)
                 .signWith(key, SignatureAlgorithm.HS256)
                 .compact();

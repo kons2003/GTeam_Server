@@ -1,10 +1,10 @@
-package com.gteam.gdsc.service;
+package com.gteam.gdsc.auth.service;
 
 import com.google.gson.Gson;
-import com.gteam.gdsc.domain.Role;
-import com.gteam.gdsc.domain.User;
-import com.gteam.gdsc.dto.Token;
-import com.gteam.gdsc.dto.GoogleUserInfo;
+import com.gteam.gdsc.auth.domain.Role;
+import com.gteam.gdsc.auth.domain.GoogleUser;
+import com.gteam.gdsc.auth.dto.Token;
+import com.gteam.gdsc.auth.dto.GoogleUserInfo;
 import com.gteam.gdsc.jwt.TokenProvider;
 import com.gteam.gdsc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Value;
@@ -67,8 +67,8 @@ public class AuthService {
             throw new RuntimeException("이메일 인증이 되지 않은 유저입니다.");
         }
 
-        User user = userRepository.findByEmail(googleUserInfo.getEmail()).orElseGet(() ->
-                userRepository.save(User.builder()
+        GoogleUser googleUser = userRepository.findByEmail(googleUserInfo.getEmail()).orElseGet(() ->
+                userRepository.save(GoogleUser.builder()
                         .email(googleUserInfo.getEmail())
                         .name(googleUserInfo.getName())
                         .pictureUrl(googleUserInfo.getPictureUrl())
@@ -76,7 +76,7 @@ public class AuthService {
                         .build())
         );
 
-        return tokenProvider.createToken(user);
+        return tokenProvider.createToken(googleUser);
     }
 
     public GoogleUserInfo getUserInfo(String accessToken) {
@@ -99,7 +99,7 @@ public class AuthService {
         throw new RuntimeException("유저 정보를 가져오는데 실패했습니다.");
     }
 
-    public User test(Principal principal) {
+    public GoogleUser test(Principal principal) {
         Long id = Long.parseLong(principal.getName());
 
         return userRepository.findById(id)

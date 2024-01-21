@@ -1,4 +1,4 @@
-package com.gteam.gdsc.config;
+package com.gteam.gdsc.swagger.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

@@ -1,4 +1,4 @@
-package com.gteam.gdsc.dto;
+package com.gteam.gdsc.auth.dto;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;

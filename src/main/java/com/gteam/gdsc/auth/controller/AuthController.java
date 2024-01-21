@@ -1,7 +1,7 @@
-package com.gteam.gdsc.controller;
+package com.gteam.gdsc.auth.controller;
 
-import com.gteam.gdsc.dto.Token;
-import com.gteam.gdsc.service.AuthService;
+import com.gteam.gdsc.auth.dto.Token;
+import com.gteam.gdsc.auth.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
