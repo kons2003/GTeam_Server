@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public class TransactionInfo {
     private Long transactionId; // transaction id
     private LocalDateTime useDateTime; // 사용 날짜, 시간
-    private String transactionType; // 구분(수입, 지출 등)
+    private String useType; // 구분(수입, 지출 등)
 
     private String depositDestination; // 입금처
     private String incomeCategory; // 소득 분야
