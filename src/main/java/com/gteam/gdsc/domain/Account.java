@@ -25,7 +25,7 @@ public class Account {
     private String accountName; // 계좌명
     
     @Column(name = "BALANCE", nullable = false)
-    private String balance; // 잔고
+    private Long balance; // 잔고
     
     
 
