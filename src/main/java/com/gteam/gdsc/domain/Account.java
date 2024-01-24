@@ -26,7 +26,12 @@ public class Account {
     
     @Column(name = "BALANCE", nullable = false)
     private Long balance; // 잔고
-    
-    
+
+    public void update(Account account) {
+        this.id = account.id;
+        this.bankName = account.bankName;
+        this.accountName = account.accountName;
+        this.balance = account.balance;
+    }
 
 }
