@@ -25,7 +25,33 @@ public class AccountService {
         return "account 추가 성공";
     }
 
+    // 계좌 불러오기
+    public Account findAccountByName(String name) {
+        return accountRepository.findAccountByName(name)
+                .orElseThrow(() -> new IllegalArgumentException("잘못된 계좌명 입니다."));
+    }
 
+    // 계좌 수정하기
+    @Transactional
+    public String updateAccount(AccountInfo accountInfo) {
+        Account account = accountRepository.findById(accountInfo.getAccountId())
+                .orElseThrow(() -> new IllegalArgumentException("잘못된 계좌 ID 입니다."));
+        account.update(Account.builder()
+                .id(accountInfo.getAccountId())
+                .bankName(accountInfo.getBankName())
+                .accountName(accountInfo.getAccountName())
+                .balance(accountInfo.getBalance())
+                .build());
+        return "수정 성공";
+    }
+
+    // 계좌 삭제
+    @Transactional
+    public String deleteAccount(AccountInfo accountInfo) {
+        Account account = findAccountByName(accountInfo.getAccountName());
+        accountRepository.delete(account);
+        return "삭제 성공";
+    }
 
 
 }
