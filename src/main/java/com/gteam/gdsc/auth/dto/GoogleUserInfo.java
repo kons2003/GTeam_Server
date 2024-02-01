@@ -1,3 +1,4 @@
+/*
 package com.gteam.gdsc.auth.dto;
 
 import com.google.gson.annotations.SerializedName;
@@ -17,4 +18,4 @@ public class GoogleUserInfo {
     @SerializedName("picture")
     private String pictureUrl;
     private String locale; // 국가
-}
+}*/

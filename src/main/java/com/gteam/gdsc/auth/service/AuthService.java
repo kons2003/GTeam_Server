@@ -1,3 +1,4 @@
+/*
 package com.gteam.gdsc.auth.service;
 
 import com.google.gson.Gson;
@@ -105,4 +106,4 @@ public class AuthService {
         return userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("유저를 찾을 수 없습니다."));
     }
-}
+}*/

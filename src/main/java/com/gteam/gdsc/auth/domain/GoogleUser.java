@@ -1,3 +1,4 @@
+/*
 package com.gteam.gdsc.auth.domain;
 
 import com.gteam.gdsc.auth.domain.Role;
@@ -34,6 +35,7 @@ public class GoogleUser {
     @Column(name = "USER_ROLE", nullable = false)
     private Role role;
 
+*/
 /*    @Column(name = "USER_BIRTHDAY", nullable = false)
     private LocalDate birthday;
 
@@ -41,5 +43,7 @@ public class GoogleUser {
     private Integer age;
 
     @Column(name = "USER_GENDER", nullable = false)
-    private String gender;*/
+    private String gender;*//*
+
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.gteam.gdsc.controller;
 
 import com.gteam.gdsc.auth.domain.GoogleUser;
@@ -30,4 +31,4 @@ public class TestController {
     }
 
 
-}
+}*/

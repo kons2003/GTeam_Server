@@ -1,3 +1,4 @@
+/*
 package com.gteam.gdsc.auth.controller;
 
 import com.gteam.gdsc.auth.dto.Token;
@@ -38,3 +39,4 @@ public class AuthController {
         return authService.loginOrSignUp(googleAccessToken);
     }
 }
+*/
