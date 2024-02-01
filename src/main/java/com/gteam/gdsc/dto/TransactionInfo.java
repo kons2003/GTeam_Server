@@ -1,12 +1,15 @@
 package com.gteam.gdsc.dto;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Data
+@Builder
 public class TransactionInfo {
     private Long transactionId; // transaction id
+    private String transactionName; // 거래명
     private LocalDateTime useDateTime; // 사용 날짜, 시간
     private String useType; // 구분(수입, 지출 등)
 
@@ -19,4 +22,7 @@ public class TransactionInfo {
     private String expenditureCategory; // 지출 분야
     private Long expenditureAmount; // 지출 금액
     private Long monthlyExpenditure; // 한 달 지출 금액
+
+    private String userName;
+    private String accountName;
 }
