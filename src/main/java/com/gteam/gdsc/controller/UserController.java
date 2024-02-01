@@ -1,47 +1,44 @@
-/*
 package com.gteam.gdsc.controller;
 
 import com.gteam.gdsc.domain.User;
+import com.gteam.gdsc.dto.UserInfo;
 import com.gteam.gdsc.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
 
 @RestController
 @Tag(name = "UserController")
 @RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController {
-    private UserService userService;
+    private final UserService userService;
 
-    // CREATE
-    @Operation(description = "신규 회원 정보 추가 입력")
     @PostMapping("/new")
-    public ResponseEntity<String> userInfo(@Parameter @RequestBody User user) {
-        return ResponseEntity.ok(userService.addUserInformation(user));
+    @Operation(description = "신규 회원 정보 추가")
+    public ResponseEntity<String> createUser(@RequestBody UserInfo userInfo) {
+        return ResponseEntity.ok(userService.createUser(userInfo));
     }
 
-    // READ
+    @GetMapping("/{name}")
     @Operation(description = "회원 조회")
-    @GetMapping("/{id}")
-    public ResponseEntity<User> getUser(@Parameter @PathVariable("id") String id) {
-        return ResponseEntity.ok(userService.findByUserId);
+    public ResponseEntity<UserInfo> findUserByName(@PathVariable("name") String name) {
+        return ResponseEntity.ok(userService.findUserByName(name).toUserInfo());
     }
 
-    // UPDATE
+    @PutMapping
     @Operation(description = "회원 정보 수정")
-    @PutMapping("/update/{id}")
-    public ResponseEntity<User> updateUser(@Parameter @PathVariable("id") @RequestBody String id) {
-        return ResponseEntity.ok(userService.findByUserId);
+    public ResponseEntity<String> updateUser(@RequestBody UserInfo userInfo) {
+        return ResponseEntity.ok(userService.updateUser(userInfo));
     }
 
-    // DELETE
+    @DeleteMapping
+    @Operation(description = "회원 정보 삭제")
+    public ResponseEntity<String> deleteUser(@RequestBody UserInfo userIdInfo, UserInfo userNameInfo) {
+        return ResponseEntity.ok(userService.deleteUser(userIdInfo, userNameInfo));
+    }
 
 }
-*/
