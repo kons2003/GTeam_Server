@@ -1,3 +1,4 @@
+/*
 package com.gteam.gdsc.config;
 
 import com.gteam.gdsc.jwt.JwtFilter;
@@ -58,3 +59,4 @@ public class SecurityConfig {
         return source;
     }
 }
+*/

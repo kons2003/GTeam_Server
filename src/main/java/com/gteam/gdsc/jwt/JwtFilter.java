@@ -1,3 +1,4 @@
+/*
 package com.gteam.gdsc.jwt;
 
 import jakarta.servlet.FilterChain;
@@ -31,3 +32,4 @@ public class JwtFilter extends GenericFilterBean {
         chain.doFilter(request, response);
     }
 }
+*/
