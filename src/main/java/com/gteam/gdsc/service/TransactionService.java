@@ -4,7 +4,6 @@ import com.gteam.gdsc.domain.Account;
 import com.gteam.gdsc.domain.Transaction;
 import com.gteam.gdsc.domain.User;
 import com.gteam.gdsc.dto.TransactionInfo;
-import com.gteam.gdsc.dto.UserInfo;
 import com.gteam.gdsc.repository.TransactionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
