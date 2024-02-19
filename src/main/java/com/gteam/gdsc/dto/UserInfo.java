@@ -1,5 +1,6 @@
 package com.gteam.gdsc.dto;
 
+import com.gteam.gdsc.dto.TransactionInfo;
 import lombok.Builder;
 import lombok.Data;
 

@@ -1,10 +1,8 @@
 package com.gteam.gdsc.controller;
 
-import com.gteam.gdsc.domain.User;
 import com.gteam.gdsc.dto.UserInfo;
 import com.gteam.gdsc.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
