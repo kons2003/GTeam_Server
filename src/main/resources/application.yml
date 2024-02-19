@@ -2,11 +2,16 @@ server:
   port: 8080
 
 spring:
+  http:
+    multipart:
+      enabled: true
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: ${application.spring.datasource.url}
     username: ${application.spring.datasource.username}
     password: ${application.spring.datasource.password}
+
   jpa:
     database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect
@@ -17,6 +22,7 @@ spring:
       hibernate:
         format_sql: false
         use_sql_comments: true
+
   security:
     oauth2:
       client:
@@ -34,6 +40,7 @@ jwt:
 mvc:
   pathmatch:
     matching-strategy: ant_path_matcher
+
 springdoc:
   default-consumes-media-type: application/json;charset=UTF-8
   default-produces-media-type: application/json;charset=UTF-8
@@ -42,3 +49,6 @@ springdoc:
     disable-swagger-default-url: true
     display-request-duration: true
     operations-sorter: alpha
+
+file:
+  dir: /Users/User/Desktop/GDSC/SolutionChallenge/ocr/input/
