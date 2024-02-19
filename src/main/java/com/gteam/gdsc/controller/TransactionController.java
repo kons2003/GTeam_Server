@@ -1,9 +1,6 @@
 package com.gteam.gdsc.controller;
 
-import com.gteam.gdsc.dto.AccountInfo;
 import com.gteam.gdsc.dto.TransactionInfo;
-import com.gteam.gdsc.dto.UserInfo;
-import com.gteam.gdsc.service.AccountService;
 import com.gteam.gdsc.service.TransactionService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
